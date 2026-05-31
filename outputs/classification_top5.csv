@@ -1,0 +1,6 @@
+Rank,Model,Scaler,Key Params,Accuracy,Precision (weighted),Recall (weighted),F1 (weighted)
+1,Decision Tree,MinMaxScaler,"{'clf__class_weight': 'balanced', 'clf__criterion': 'gini', 'clf__max_depth': 2, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2}",0.938,0.9486,0.938,0.9395
+2,KNN,RobustScaler,"{'n_neighbors': 11, 'metric': 'manhattan', 'note': 'extra experiment'}",0.8997,0.8984,0.8997,0.8984
+3,KNN,StandardScaler,"{'n_neighbors': 9, 'metric': 'euclidean'}",0.8992,0.8979,0.8992,0.8982
+4,KNN,StandardScaler,"{'n_neighbors': 11, 'metric': 'euclidean'}",0.8991,0.8978,0.8991,0.898
+5,Logistic Regression,None,"{'C': 10, 'penalty': 'l2', 'class_weight': None, 'threshold': 0.468}",0.8941,0.8926,0.8941,0.8925
