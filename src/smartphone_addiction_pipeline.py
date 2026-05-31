@@ -15,7 +15,7 @@ Call run_pipeline() to run everything end-to-end:
 Dataset
 -------
 Kaggle: Smartphone Usage and Addiction Analysis Dataset (7,500 rows)
-https://www.kaggle.com/data이미 sets/algozee/smartphone-usage-and-addiction-analysis-dataset
+https://www.kaggle.com/datasets/algozee/smartphone-usage-and-addiction-analysis-dataset
 
 Required columns
     Numerical   : age, daily_screen_time_hours, social_media_hours,

@@ -36,7 +36,7 @@ run_pipeline(csv_path)
 │     └── |Pearson r| correlation with addicted_label
 │
 ├── [3] Classification
-│     ├── Decision Tree  — GridSearchCV (~1,240 combinations)
+│     ├── Decision Tree  — GridSearchCV (~11,160 combinations)
 │     ├── KNN            — 3 scalers × 5 K values + Manhattan/Chebyshev (extra)
 │     └── Logistic Regression — 4 scalers × 5 C values + threshold tuning (extra)
 │
