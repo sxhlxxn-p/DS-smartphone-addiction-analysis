@@ -36,7 +36,7 @@ run_pipeline(csv_path)
 │     └── |Pearson r| correlation with addicted_label
 │
 ├── [3] Classification
-│     ├── Decision Tree  — GridSearchCV (~11,160 combinations)
+│     ├── Decision Tree  — GridSearchCV (~1,240 combinations)
 │     ├── KNN            — 3 scalers × 5 K values + Manhattan/Chebyshev (extra)
 │     └── Logistic Regression — 4 scalers × 5 C values + threshold tuning (extra)
 │
@@ -70,17 +70,24 @@ Each model is represented by its best result. The integrated pipeline outputs on
 
 † Manhattan distance was added as an extra distance-metric experiment.
 
-### Clustering Top 5
+### Clustering — Best Results per Partition
 
-Selected from the usage / app type clustering experiments based on cluster-size balance, profile interpretability, and method diversity.
-
-| Rank | Experiment | Model | Partition | k | Balance |
+| Partition | Algorithm | Scaler | k | Cluster Sizes | Key Pattern |
 |---|---|---|---|---|---|
-| 1 | `minmax_kmeans_euclidean_k4` | K-Means | Usage / App type | 4 | 0.962 |
-| 2 | `standard_kmeans_euclidean_k3` | K-Means | Usage / App type | 3 | 0.634 |
-| 3 | `robust_kmeans_euclidean_k4` | K-Means | Usage / App type | 4 | 0.929 |
-| 4 | `minmax_agglomerative_complete_manhattan_k4` | Agglomerative | Usage / App type | 4 | 0.770 |
-| 5 | `standard_agglomerative_average_manhattan_k5` | Agglomerative | Usage / App type | 5 | 0.671 |
+| Usage / App type | K-Means (Euclidean) | MinMaxScaler | 4 | 1835–1908 (balance 0.962) | High/Low usage × Gaming/Work |
+| Sleep / Notifications / Stress | K-Means (Euclidean) | RobustScaler | 4 | 1831–1925 (balance 0.951) | Sleep shortage/sufficient × High notifications/App launches |
+
+### Clustering — Usage / App type Top 5 Experiments
+
+Selected based on cluster-size balance, profile interpretability, and method diversity.
+
+| Rank | Experiment | Model | k | Balance |
+|---|---|---|---|---|
+| 1 | `minmax_kmeans_euclidean_k4` | K-Means | 4 | 0.962 |
+| 2 | `standard_kmeans_euclidean_k3` | K-Means | 3 | 0.634 |
+| 3 | `robust_kmeans_euclidean_k4` | K-Means | 4 | 0.929 |
+| 4 | `minmax_agglomerative_complete_manhattan_k4` | Agglomerative | 4 | 0.770 |
+| 5 | `standard_agglomerative_average_manhattan_k5` | Agglomerative | 5 | 0.671 |
 
 Balance = min cluster size / max cluster size. Closer to 1.0 means more evenly distributed clusters.
 
