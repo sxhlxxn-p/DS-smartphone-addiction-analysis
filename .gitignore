@@ -2,4 +2,3 @@ __pycache__/
 *.pyc
 .DS_Store
 .ipynb_checkpoints/
-data/smartphone_addiction_analysis.csv
